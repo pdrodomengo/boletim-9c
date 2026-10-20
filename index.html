@@ -9,62 +9,86 @@
 <body>
 
     <div class="container">
-        <!-- Cabeçalho do Boletim -->
-        <header class="cabecalho">
-            <h1>Boletim Digital</h1>
-            <p class="subtitulo">9º Ano — Estudante Exemplo</p>
-        </header>
-
-        <!-- Área Superior: Cards de Resumo -->
-        <section class="cards-resumo">
-            <div class="card">
-                <h3>Média Geral</h3>
-                <p id="card-media-geral" class="valor-card">—</p>
-            </div>
-            
-            <div class="card">
-                <h3>Total de Faltas</h3>
-                <p id="card-total-faltas" class="valor-card">—</p>
-            </div>
-
-            <div class="card">
-                <h3>Bom Desempenho</h3>
-                <p id="card-bom-desempenho" class="valor-card">—</p>
-            </div>
-
-            <div class="card">
-                <h3>Atenção</h3>
-                <p id="card-atencao" class="valor-card">—</p>
-            </div>
-
-            <div class="card">
-                <h3>Frequência</h3>
-                <p id="card-frequencia" class="valor-card">92%</p>
-                <small>Frequência adequada</small>
+        <!-- Área de Acesso por PIN -->
+        <section id="secao-acesso" class="secao-acesso">
+            <div class="card-acesso">
+                <h2>Acesso ao Boletim</h2>
+                <p class="info-aluno"><strong>Série:</strong> 9º Ano | <strong>Turma:</strong> 9C | <strong>Chamada:</strong> 29</p>
+                <div class="campo-pin">
+                    <label for="campo-pin-input">Digite seu PIN:</label>
+                    <input type="password" id="campo-pin-input" placeholder="PIN" maxlength="20">
+                    <button id="btn-entrar" onclick="fazerLogin()">Entrar</button>
+                </div>
+                <p id="mensagem-status" class="mensagem-status"></p>
             </div>
         </section>
 
-        <!-- Tabela de Disciplinas -->
-        <section class="secao-tabela">
-            <div class="tabela-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Disciplina</th>
-                            <th>1º Tri</th>
-                            <th>2º Tri</th>
-                            <th>3º Tri</th>
-                            <th>Média</th>
-                            <th>Faltas</th>
-                            <th>Situação</th>
-                        </tr>
-                    </thead>
-                    <tbody id="corpo-tabela">
-                        <!-- As 15 disciplinas serão inseridas aqui automaticamente pelo JavaScript -->
-                    </tbody>
-                </table>
+        <!-- Conteúdo do Boletim (Oculto até realizar o acesso) -->
+        <div id="conteudo-boletim" style="display: none;">
+            <!-- Cabeçalho do Boletim -->
+            <header class="cabecalho">
+                <h1>Boletim Digital</h1>
+                <p class="subtitulo">9º Ano — Estudante Exemplo</p>
+            </header>
+
+            <!-- Painel de Ações / Edição -->
+            <div class="painel-acoes">
+                <button id="btn-alternar-edicao" class="btn-acao" onclick="alternarModoEdicao()">Alterar dados</button>
+                <button id="btn-salvar-dados" class="btn-acao btn-salvar" onclick="salvarAlteracoes()" style="display: none;">Salvar alterações</button>
+                <span id="status-salvamento" class="status-salvamento"></span>
             </div>
-        </section>
+
+            <!-- Área Superior: Cards de Resumo -->
+            <section class="cards-resumo">
+                <div class="card">
+                    <h3>Média Geral</h3>
+                    <p id="card-media-geral" class="valor-card">—</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Total de Faltas</h3>
+                    <p id="card-total-faltas" class="valor-card">—</p>
+                </div>
+
+                <div class="card">
+                    <h3>Bom Desempenho</h3>
+                    <p id="card-bom-desempenho" class="valor-card">—</p>
+                </div>
+
+                <div class="card">
+                    <h3>Atenção</h3>
+                    <p id="card-atencao" class="valor-card">—</p>
+                </div>
+
+                <div class="card">
+                    <h3>Frequência</h3>
+                    <p id="card-frequencia" class="valor-card">92%</p>
+                    <small>Frequência adequada</small>
+                </div>
+            </section>
+
+            <!-- Tabela de Disciplinas -->
+            <section class="secao-tabela">
+                <div class="tabela-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>1º Tri</th>
+                                <th>2º Tri</th>
+                                <th>3º Tri</th>
+                                <th>Média</th>
+                                <th>Faltas</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-tabela">
+                            <!-- As disciplinas serão inseridas aqui automaticamente pelo JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
     </div>
 
     <!-- Conexão com o arquivo de script JavaScript -->

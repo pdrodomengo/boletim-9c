@@ -19,13 +19,87 @@ body {
     margin: 0 auto;
 }
 
+/* Estilização da Seção de Acesso por PIN */
+.secao-acesso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.card-acesso {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    border-top: 4px solid #0d6efd;
+}
+
+.card-acesso h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.info-aluno {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.campo-pin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.campo-pin label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+.campo-pin input {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.campo-pin button {
+    padding: 10px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.campo-pin button:hover {
+    background-color: #0b5ed7;
+}
+
+.mensagem-status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-height: 1.2em;
+}
+
 /* Estilização do Cabeçalho com a cor principal (Azul) */
 .cabecalho {
     background-color: #0d6efd;
     color: #ffffff;
     padding: 25px;
     border-radius: 12px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -37,6 +111,46 @@ body {
 .subtitulo {
     font-size: 1.1rem;
     opacity: 0.9;
+}
+
+/* Painel de Ações / Edição */
+.painel-acoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.btn-acao {
+    padding: 10px 18px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-acao:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-salvar {
+    background-color: #198754;
+}
+
+.btn-salvar:hover {
+    background-color: #157347;
+}
+
+.status-salvamento {
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 /* Área de Cards com visual moderno e sombra suave */
@@ -109,6 +223,21 @@ tr:hover {
     background-color: #f1f5f9; /* Efeito ao passar o mouse na linha */
 }
 
+/* Inputs da Tabela de Edição */
+.input-edicao {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.input-edicao.invalido {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
 /* Estilos de destaque para as situações */
 .situacao-bom {
     color: #198754;
@@ -138,5 +267,10 @@ tr:hover {
     th, td {
         padding: 10px 8px;
         font-size: 0.85rem;
+    }
+
+    .painel-acoes {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
